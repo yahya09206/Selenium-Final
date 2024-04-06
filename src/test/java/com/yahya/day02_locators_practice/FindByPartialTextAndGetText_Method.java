@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.List;
+
 public class FindByPartialTextAndGetText_Method {
     public static void main(String[] args) {
 
@@ -21,6 +23,13 @@ public class FindByPartialTextAndGetText_Method {
         // using partial link text then get the full text using new method getText
         WebElement myLink = driver.findElement(By.partialLinkText("Disappearing"));
         System.out.println("myLink.getText() = " + myLink.getText());
+
+        // What if I just provide partial link as letter A
+        WebElement aLink = driver.findElement(By.partialLinkText("A"));
+        System.out.println("aLink.getText() = " + aLink.getText());
+
+        List<WebElement> aLink2 = driver.findElements(By.partialLinkText("A"));
+        System.out.println("aLink2.size() = " + aLink2.size());
 
         driver.quit();
     }
