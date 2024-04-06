@@ -15,10 +15,18 @@ public class LinkPartialTextLinkText {
 
         // Click first link A/B testing
         driver.findElement(By.linkText("A/B Testing")).click();
+        Thread.sleep(3000);
         // Navigate back to home page
+        driver.findElement(By.linkText("Home")).click();
         // Click on second link
+        Thread.sleep(3000);
+        driver.findElement(By.partialLinkText("Add/Remove")).click();
+        Thread.sleep(3000);
         // Click on Home link to go back to home
+        driver.findElement(By.linkText("Home")).click();
+        Thread.sleep(3000);
         // Click on redirect link
+        driver.findElement(By.partialLinkText("Redirect")).click();
 
         Thread.sleep(3000);
         driver.quit();
