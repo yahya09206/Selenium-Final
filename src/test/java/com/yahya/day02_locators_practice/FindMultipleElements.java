@@ -26,5 +26,9 @@ public class FindMultipleElements {
         // get the first item and get the text
         WebElement firstItem = allLink.get(0);
         System.out.println("firstItem.getText() = " + firstItem.getText());
+
+        for (WebElement webElement : allLink) {
+            System.out.println(webElement.getText());
+        }
     }
 }
