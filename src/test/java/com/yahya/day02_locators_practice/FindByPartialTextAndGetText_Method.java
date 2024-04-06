@@ -28,9 +28,6 @@ public class FindByPartialTextAndGetText_Method {
         WebElement aLink = driver.findElement(By.partialLinkText("A"));
         System.out.println("aLink.getText() = " + aLink.getText());
 
-        List<WebElement> aLink2 = driver.findElements(By.partialLinkText("A"));
-        System.out.println("aLink2.size() = " + aLink2.size());
-
         driver.quit();
     }
 }
