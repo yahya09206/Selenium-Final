@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.List;
+
 public class FindElementByClassName {
     public static void main(String[] args) {
 
@@ -20,6 +22,15 @@ public class FindElementByClassName {
         WebElement elm1 = driver.findElement(By.className("h1y"));
         System.out.println("elm1.getText() = " + elm1.getText());
 
+        // Identify first li element with class name list-group-item
+        WebElement firstLiItem = driver.findElement(By.className("list-group-item"));
+        System.out.println("firstLiItem.getText() = " + firstLiItem.getText());
+
+        // Identify all li elements with class name list-group-item
+        // get the size of all the elements
+        List<WebElement> allLiTagElements = driver.findElements(By.className("list-group-item"));
+        // get the size of all the elements
+        System.out.println("allLiTagElements.size() = " + allLiTagElements.size());
 
     }
 }
