@@ -47,6 +47,9 @@ public class GetElementAttribute {
         // role
         System.out.println("searchbox.getAttribute(\"role\") = " + searchbox.getAttribute("role"));
 
+        // using value attribute of input text box to extract the text inside
+        System.out.println("searchbox.getAttribute(\"value\") = " + searchbox.getAttribute("value"));
+
         driver.quit();
 
 
