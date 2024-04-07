@@ -24,6 +24,29 @@ public class GetElementAttribute {
         // Get any attribute identified element, in this case href
         System.out.println("firstLink.getAttribute(\"href\") = " + firstLink.getAttribute("href"));
 
+        // Navigate to google.com and identify the search box and get couple attribute values
+        driver.navigate().to("https://google.com");
+        WebElement searchbox = driver.findElement(By.name("q"));
+        searchbox.sendKeys("selenium");
+
+        // Get the class attribute
+        System.out.println("searchbox.getAttribute(\"class\") = " + searchbox.getAttribute("class"));
+
+        // maxlength
+        System.out.println("searchbox.getAttribute(\"maxlength\") = " + searchbox.getAttribute("maxlength"));
+
+        // title
+        System.out.println("searchbox.getAttribute(\"title\") = " + searchbox.getAttribute("title"));
+
+        // autocapitalize
+        System.out.println("searchbox.getAttribute(\"autocapitalize\") = " + searchbox.getAttribute("autocapitalize"));
+
+        // spellcheck
+        System.out.println("searchbox.getAttribute(\"spellcheck\") = " + searchbox.getAttribute("spellcheck"));
+
+        // role
+        System.out.println("searchbox.getAttribute(\"role\") = " + searchbox.getAttribute("role"));
+
         driver.quit();
 
 
