@@ -32,5 +32,10 @@ public class FindElementByClassName {
         // get the size of all the elements
         System.out.println("allLiTagElements.size() = " + allLiTagElements.size());
 
+        // Iterate over all the elements and get the text of each element
+        for (WebElement allLiTagElement : allLiTagElements) {
+            System.out.println("allLiTagElement.getText() = " + allLiTagElement.getText());
+        }
+
     }
 }
