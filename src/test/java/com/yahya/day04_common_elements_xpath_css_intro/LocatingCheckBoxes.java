@@ -22,5 +22,11 @@ public class LocatingCheckBoxes {
 
         WebElement checkbox1 = driver.findElement(By.name("checkbox1"));
         System.out.println("checkbox1.isSelected() = " + checkbox1.isSelected());
+        // get the value of checked attribute
+        System.out.println("checkbox1.getAttribute(\"checked\") = " + checkbox1.getAttribute("checked"));
+
+        WebElement checkbox2 = driver.findElement(By.id("box2"));
+        System.out.println("checkbox2.isSelected() = " + checkbox2.isSelected());
+        System.out.println("checkbox2.getAttribute(\"checked\") = " + checkbox2.getAttribute("checked"));
     }
 }
