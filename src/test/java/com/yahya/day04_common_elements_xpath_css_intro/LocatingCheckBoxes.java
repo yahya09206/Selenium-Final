@@ -28,5 +28,17 @@ public class LocatingCheckBoxes {
         WebElement checkbox2 = driver.findElement(By.id("box2"));
         System.out.println("checkbox2.isSelected() = " + checkbox2.isSelected());
         System.out.println("checkbox2.getAttribute(\"checked\") = " + checkbox2.getAttribute("checked"));
+
+        checkbox1.click(); // currently unchecked --> will be checked
+        checkbox2.click(); // currently checked --> will be unchecked
+
+        if (!checkbox1.isSelected()){
+            checkbox1.click();
+        }
+        if (!checkbox2.isSelected()){
+            checkbox2.click();
+        } else {
+            System.out.println("Take it easy, alreday unchecked");
+        }
     }
 }
