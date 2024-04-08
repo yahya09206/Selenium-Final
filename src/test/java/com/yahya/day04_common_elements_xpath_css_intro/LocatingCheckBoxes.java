@@ -18,7 +18,7 @@ public class LocatingCheckBoxes {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         WebDriver driver = new ChromeDriver(options);
-        driver.get("http://practice.cydeo.com/");
+        driver.get("http://practice.cydeo.com/checkboxes");
 
         WebElement checkbox1 = driver.findElement(By.name("checkbox1"));
         System.out.println("checkbox1.isSelected() = " + checkbox1.isSelected());
