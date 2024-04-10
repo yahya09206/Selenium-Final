@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class SelectingFromFakeDropdown {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -17,7 +17,8 @@ public class SelectingFromFakeDropdown {
         // The only way that Select class works, is if element tag is "select"
         WebElement unusualDropdown = driver.findElement(By.id("dropdownMenuLink"));
         unusualDropdown.click();
-        // Identify and click on google option
+        Thread.sleep(2500);
+        // Identify and click on the Google option
         driver.findElement(By.linkText("Google")).click();
 
         driver.quit();
