@@ -22,6 +22,9 @@ public class FindElementByCssSelector {
         WebElement searchbox = driver.findElement(By.cssSelector("input[name='p'][type='text']"));
         searchbox.sendKeys("selenium");
 
+        WebElement clearBtn = driver.findElement(By.cssSelector("button#sbq-clear>span"));
+        clearBtn.click();
+
         Thread.sleep(2500);
         driver.quit();
     }
