@@ -27,6 +27,10 @@ public class LocatingByXpathIntro {
             // elementTag[@attributeName='attribute value' and @attributeName2='attribute value']
         // you can also provide the text() xpath function
             // elementTag[text()='some text value']
+        // Navigate to checkbox element
+        WebElement checkboxLink = driver.findElement(By.xpath("//ul/li/a[text()='Checkboxes']"));
+        checkboxLink.click();
+        // Identify first checkbox and click on it
         WebElement checkbox1 = driver.findElement(By.xpath("//input[@id='box1']"));
         System.out.println("checkbox1.getText() = " + checkbox1.getText());
         checkbox1.click();
