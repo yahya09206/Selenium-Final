@@ -35,12 +35,10 @@ public class LocatingByXpathIntro {
         System.out.println("headerText.getText() = " + headerText.getText());
         // Identify first checkbox and click on it
         WebElement checkbox1 = driver.findElement(By.xpath("//input[@id='box1']"));
-        System.out.println("checkbox1.getText() = " + checkbox1.getText());
         checkbox1.click();
 
         // Un-click second checkbox
         WebElement checkbox2 = driver.findElement(By.xpath("//input[@id='box2']"));
-        System.out.println("checkbox2.getText() = " + checkbox2.getText());
         checkbox2.click();
 
         Thread.sleep(2500);
