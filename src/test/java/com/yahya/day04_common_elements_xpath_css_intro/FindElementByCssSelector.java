@@ -2,6 +2,7 @@ package com.yahya.day04_common_elements_xpath_css_intro;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,6 +25,9 @@ public class FindElementByCssSelector {
 
         WebElement clearBtn = driver.findElement(By.cssSelector("button#sbq-clear>span"));
         clearBtn.click();
+
+        searchbox.sendKeys("selenium", Keys.ENTER);
+
 
         Thread.sleep(2500);
         driver.quit();
