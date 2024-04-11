@@ -30,12 +30,15 @@ public class LocatingByXpathIntro {
         // Navigate to checkbox element
         WebElement checkboxLink = driver.findElement(By.xpath("//ul/li/a[text()='Checkboxes']"));
         checkboxLink.click();
+        // Identify header and print text
+        WebElement headerText = driver.findElement(By.xpath("//div/h3[text()='Checkboxes']"));
+        System.out.println("headerText.getText() = " + headerText.getText());
         // Identify first checkbox and click on it
         WebElement checkbox1 = driver.findElement(By.xpath("//input[@id='box1']"));
         System.out.println("checkbox1.getText() = " + checkbox1.getText());
         checkbox1.click();
 
-        // Unclicking second checkbox
+        // Un-click second checkbox
         WebElement checkbox2 = driver.findElement(By.xpath("//input[@id='box2']"));
         System.out.println("checkbox2.getText() = " + checkbox2.getText());
         checkbox2.click();
