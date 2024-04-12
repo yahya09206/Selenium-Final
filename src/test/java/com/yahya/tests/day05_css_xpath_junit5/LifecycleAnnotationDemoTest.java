@@ -1,6 +1,7 @@
 package com.yahya.tests.day05_css_xpath_junit5;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -19,6 +20,11 @@ public class LifecycleAnnotationDemoTest {
     @Test
     public void test2(){
         System.out.println("test2 method is running");
+    }
+
+    @AfterEach
+    public void tearDown(){
+        System.out.println("AfterEach runs after each and every test");
     }
 
     @AfterAll
