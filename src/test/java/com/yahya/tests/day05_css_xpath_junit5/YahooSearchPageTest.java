@@ -22,6 +22,8 @@ public class YahooSearchPageTest {
 
         String title = driver.getTitle();
         Assertions.assertEquals("Yahoo Search - Web Search", title);
+
+        driver.quit();
     }
 
 
