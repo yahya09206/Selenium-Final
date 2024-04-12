@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class YahooSearchPageTest {
 
     /**
@@ -24,7 +26,7 @@ public class YahooSearchPageTest {
         driver.get("https://search.yahoo.com");
 
         String title = driver.getTitle();
-        Assertions.assertEquals("Yahoo Search - Web Search", title);
+        assertEquals("Yahoo Search - Web Search", title);
 
         driver.quit();
     }
@@ -48,8 +50,9 @@ public class YahooSearchPageTest {
         // Type in some text
         searchBox.sendKeys("selenium", Keys.ENTER);
 
-        String title = driver.getTitle();
-        Assertions.assertEquals("selenium - Yahoo Search Results", title);
+        String expectedTitle = "selenium - Yahoo Search Results";
+        String actualTitle = driver.getTitle();
+        assertEquals(expectedTitle, actualTitle);
 
         Thread.sleep(2000);
         driver.quit();
