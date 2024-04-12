@@ -3,7 +3,10 @@ package com.yahya.tests.day05_css_xpath_junit5;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class YahooSearchPageTest {
@@ -33,4 +36,19 @@ public class YahooSearchPageTest {
      *      and search selenium
      *      the page title should start with "selenium"
      */
+    @Test
+    public void testYahooSearchResultPageTitle(){
+
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://search.yahoo.com");
+
+        // Locate search box
+        WebElement searchBox = driver.findElement(By.xpath("//div/input[@type='text']"));
+        // Type in some text
+        searchBox.sendKeys("selenium", Keys.ENTER);
+
+        String title = driver.getTitle();
+        Assertions.assertEquals("selenium - Yahoo Search Results", title);
+    }
 }
