@@ -23,5 +23,6 @@ public class FirstTest {
         Assertions.assertEquals("I love Selenium", msg);
 
         // assert this message starts with "I love
+        Assertions.assertTrue(msg.startsWith("I love"));
     }
 }
