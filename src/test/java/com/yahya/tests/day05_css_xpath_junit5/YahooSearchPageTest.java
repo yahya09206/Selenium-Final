@@ -37,7 +37,7 @@ public class YahooSearchPageTest {
      *      the page title should start with "selenium"
      */
     @Test
-    public void testYahooSearchResultPageTitle(){
+    public void testYahooSearchResultPageTitle() throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -50,5 +50,8 @@ public class YahooSearchPageTest {
 
         String title = driver.getTitle();
         Assertions.assertEquals("selenium - Yahoo Search Results", title);
+
+        Thread.sleep(2000);
+        driver.quit();
     }
 }
