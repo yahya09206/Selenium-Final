@@ -14,7 +14,12 @@ public class CssSelectorPractice {
         driver.get("http://practice.cydeo.com/forgot_password");
 
         // Locate two elements using CSS Selector
-        WebElement passwordBox = driver.findElement(By.cssSelector("div>input[type='text'][name='email']"));
+        WebElement emailBox = driver.findElement(By.cssSelector("div>input[type='text'][name='email']"));
+        emailBox.sendKeys("someone@someone.com");
+
+        WebElement retrieveBtn = driver.findElement(By.cssSelector("button#form_submit.radius"));
+        retrieveBtn.click();
+
 
 
     }
