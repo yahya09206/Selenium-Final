@@ -22,7 +22,7 @@ public class CssSelectorPractice {
 
         WebElement confirmationMsg = driver.findElement(By.cssSelector("h4[name='confirmation_messsage']"));
 
-
+        driver.quit();
 
     }
 }
