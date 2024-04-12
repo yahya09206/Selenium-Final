@@ -20,6 +20,8 @@ public class CssSelectorPractice {
         WebElement retrieveBtn = driver.findElement(By.cssSelector("button#form_submit.radius"));
         retrieveBtn.click();
 
+        WebElement confirmationMsg = driver.findElement(By.cssSelector("h4[name='confirmation_messsage']"));
+
 
 
     }
