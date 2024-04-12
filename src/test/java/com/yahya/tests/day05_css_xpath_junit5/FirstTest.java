@@ -15,4 +15,13 @@ public class FirstTest {
 
         Assertions.assertEquals(expected, num1 + num2);
     }
+
+    @Test
+    public void testString(){
+        String msg = "I love Selenium";
+        // assert this message equals "I love Selenium"
+        Assertions.assertEquals("I love Selenium", msg);
+
+        // assert this message starts with "I love
+    }
 }
