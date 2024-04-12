@@ -1,10 +1,7 @@
 package com.yahya.tests.day05_css_xpath_junit5;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class YahooSearchPageTest {
 
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver;
     @BeforeAll
     public static void init(){
         WebDriverManager.chromedriver().setup();
@@ -23,8 +20,13 @@ public class YahooSearchPageTest {
 
     @BeforeEach
     public void setUpWebDriver(){
-        WebDriver driver = new ChromeDriver();
+        driver = new ChromeDriver();
         driver.get("https://search.yahoo.com");
+    }
+
+    @AfterEach
+    public void closeBrowser(){
+        driver.quit();
     }
 
     /**
@@ -40,10 +42,9 @@ public class YahooSearchPageTest {
 //        driver.get("https://search.yahoo.com");
 
 
+        String expectedTitle = "Yahoo Search - Web Search";
         String title = driver.getTitle();
-        assertEquals("Yahoo Search - Web Search", title);
-
-        driver.quit();
+        assertEquals(expectedTitle, title);
     }
 
 
@@ -70,6 +71,5 @@ public class YahooSearchPageTest {
         assertEquals(expectedTitle, actualTitle);
 
         Thread.sleep(2000);
-        driver.quit();
     }
 }
