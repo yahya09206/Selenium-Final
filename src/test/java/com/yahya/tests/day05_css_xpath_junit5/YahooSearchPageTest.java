@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class YahooSearchPageTest {
 
+    // Declare at class level
     WebDriver driver;
     @BeforeAll
     public static void init(){
