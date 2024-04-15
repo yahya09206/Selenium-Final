@@ -28,7 +28,7 @@ public class IsDisplayedPracticeTest {
 
 
     @Test
-    public void formPage(){
+    public void formPage() throws InterruptedException {
 
         // navigate to the form page
         driver.get("https://practice.cydeo.com/registration_form");
@@ -37,8 +37,12 @@ public class IsDisplayedPracticeTest {
         WebElement errorMsg = driver.findElement(By.xpath("//div/small[@data-bv-validator='stringLength']"));
         System.out.println("errorMsg.isDisplayed() = " + errorMsg.isDisplayed());
 
+        Thread.sleep(2500);
+
         // enter text "a" and check the error message displayed
         WebElement enterText = driver.findElement(By.xpath("//div/input[@name='firstname']"));
+        enterText.sendKeys("a");
+        System.out.println("errorMsg.isDisplayed() = " + errorMsg.isDisplayed());
 
     }
 }
