@@ -34,6 +34,13 @@ public class AlertPracticeTest extends TestBase {
         driver.switchTo().alert().accept();
         // Alert alertObj = driver.switchTo().alert();
 
+        driver.findElement(By.xpath("//button[.='Click for JS Confirm']")).click();
+        driver.switchTo().alert().dismiss();
+
+        // Enter text into prompt
+        driver.findElement(By.xpath("//button[.='Click for JS Prompt']")).click();
+        driver.switchTo().alert().accept();
+
 
     }
 }
