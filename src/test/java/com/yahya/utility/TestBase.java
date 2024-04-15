@@ -14,7 +14,8 @@ public abstract class TestBase {
      */
 
     // Declare at class level
-    WebDriver driver;
+    protected WebDriver driver;
+
     @BeforeEach
     public void setUpWebDriver(){
         WebDriverManager.chromedriver().setup();
