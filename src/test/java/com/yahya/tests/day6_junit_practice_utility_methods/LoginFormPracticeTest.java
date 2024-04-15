@@ -41,6 +41,9 @@ public class LoginFormPracticeTest {
         String expectedResult = "You logged into a secure area!";
         Assertions.assertTrue(successMsg.getText().startsWith(expectedResult));
 
+        // Return true or false is message is displayed
+        System.out.println("successMsg.isDisplayed() = " + successMsg.isDisplayed());
+
 
     }
 }
