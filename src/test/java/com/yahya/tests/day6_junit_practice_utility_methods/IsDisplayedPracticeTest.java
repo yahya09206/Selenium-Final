@@ -25,14 +25,20 @@ public class IsDisplayedPracticeTest {
         driver.quit();
     }
 
-    // navigate to the form page
-    // identify the error message exists but not displayed
-    // enter text "a" and check the error message displayed
+
+
     @Test
     public void formPage(){
 
+        // navigate to the form page
         driver.get("https://practice.cydeo.com/registration_form");
 
-        WebElement errorMsg = driver.findElement(By.xpath("//div/small[@data-bv-validator='stringLength']"))
+        // identify the error message exists but not displayed
+        WebElement errorMsg = driver.findElement(By.xpath("//div/small[@data-bv-validator='stringLength']"));
+        System.out.println("errorMsg.isDisplayed() = " + errorMsg.isDisplayed());
+
+        // enter text "a" and check the error message displayed
+        WebElement enterText = driver.findElement(By.xpath("//div/input[@name='firstname']"));
+
     }
 }
