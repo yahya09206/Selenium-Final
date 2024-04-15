@@ -12,7 +12,7 @@ public class SlowElementTest extends TestBase {
     @Test
     public void testWait() {
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         /**
          * We can instruct WebDriver to wait maximum amount of time
          * before throwing noSuchElement Exception by using implicit wait
