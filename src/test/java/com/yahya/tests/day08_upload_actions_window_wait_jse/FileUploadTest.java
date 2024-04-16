@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class FileUploadTest extends TestBase {
 
     @Test
@@ -18,5 +20,9 @@ public class FileUploadTest extends TestBase {
         fileInputField.sendKeys(filePath);
 
         driver.findElement(By.id("file-submit")).click();
+
+        // TODO: Assert "File Uploaded!" success message shows up
+        WebElement successMsg = driver.findElement(By.xpath("//h3[.='File Uploaded!']"));
+        assertTrue(successMsg.isEnabled());
     }
 }
