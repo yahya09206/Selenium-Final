@@ -15,5 +15,6 @@ public class FileUploadTest extends TestBase {
         WebElement fileInputField = driver.findElement(By.xpath("\"//input[@id='file-upload']\""));
         // find the full path of you file in your computer and send key into above input field
         String filePath = "/Users/solodolo/Desktop/coolimage.avif";
+        fileInputField.sendKeys(filePath);
     }
 }
