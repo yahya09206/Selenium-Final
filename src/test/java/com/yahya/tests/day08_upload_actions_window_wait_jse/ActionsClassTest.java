@@ -29,5 +29,10 @@ public class ActionsClassTest extends TestBase {
         // Verify User profile 1 is displayed with text "name: user1"
         WebElement firstProfileElm = driver.findElement(By.xpath("//h5[.='name: user1']"));
         assertTrue(firstProfileElm.isEnabled());
+
+        // locate second image and hover over to the image and verify User profile 1 is displayed
+        WebElement img2Elm = driver.findElement(By.xpath("(//div[@class= 'figure']/img)[2]"));
+        actions.moveToElement(img2Elm).perform();
+        BrowserUtil.waitFor(2);
     }
 }
