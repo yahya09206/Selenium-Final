@@ -3,7 +3,7 @@ package com.yahya.utility;
 public class BrowserUtil {
 
     /**
-     * A mehod to pause the thread for a certaina mount of seconds
+     * A method to pause the thread for a certaina mount of seconds
      * @param seconds
      */
     public static void waitFor(int seconds){

@@ -1,5 +1,6 @@
 package com.yahya.tests.day08_upload_actions_window_wait_jse;
 
+import com.yahya.utility.BrowserUtil;
 import com.yahya.utility.TestBase;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -20,6 +21,7 @@ public class FileUploadTest extends TestBase {
         fileInputField.sendKeys(filePath);
 
         driver.findElement(By.id("file-submit")).click();
+        BrowserUtil.waitFor(5);
 
         // TODO: Assert "File Uploaded!" success message shows up
         WebElement successMsg = driver.findElement(By.xpath("//h3[.='File Uploaded!']"));
