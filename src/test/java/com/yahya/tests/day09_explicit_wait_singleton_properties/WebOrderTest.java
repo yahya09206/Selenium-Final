@@ -1,5 +1,6 @@
 package com.yahya.tests.day09_explicit_wait_singleton_properties;
 
+import com.yahya.utility.BrowserUtil;
 import com.yahya.utility.TestBase;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -20,5 +21,9 @@ public class WebOrderTest extends TestBase {
         password.sendKeys("test");
         // click login
         driver.findElement(By.id("ctl00_MainContent_login_button"));
+
+        BrowserUtil.waitFor(4);
+
+
     }
 }
