@@ -3,6 +3,7 @@ package com.yahya.tests.day09_explicit_wait_singleton_properties;
 import com.yahya.utility.TestBase;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -25,6 +26,20 @@ public class ExplicitWaitTest extends TestBase {
          * We want to wait until the title value becomes "Dynamic Title"
          */
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(7));
+        /**
+         * Then we use until method that accepts expected conditions
+         * ExpectedConditions helper class has a lot of pre-written conditions
+         * For common scenarios, so we don't have to build our own
+         * in this case we are checking for title that equals Dynamic Title
+         */
+        // wait.until(ExpectedConditions.titleIs("Dynamic title"));
+        /**
+         * Try a different condition
+         * Wait until the spongebob image is visible on screen
+         */
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("img")));
+        System.out.println("END");
+
 
     }
 }
