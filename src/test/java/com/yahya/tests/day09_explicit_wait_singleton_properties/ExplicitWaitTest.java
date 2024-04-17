@@ -37,7 +37,7 @@ public class ExplicitWaitTest extends TestBase {
          * Try a different condition
          * Wait until the spongebob image is visible on screen
          */
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("img")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div/img[@alt='square pants']")));
         System.out.println("END");
 
 
