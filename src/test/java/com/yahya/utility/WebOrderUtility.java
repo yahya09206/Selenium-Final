@@ -49,5 +49,7 @@ public class WebOrderUtility {
         } catch (NoSuchElementException e){
             System.out.println("No such element! You are not on the right page");
         }
+
+        return result;
     }
 }
