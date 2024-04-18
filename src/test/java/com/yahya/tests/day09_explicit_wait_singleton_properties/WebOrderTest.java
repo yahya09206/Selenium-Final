@@ -22,8 +22,13 @@ public class WebOrderTest extends TestBase {
 //        password.sendKeys("test");
 //        // click login
 //        driver.findElement(By.id("ctl00_MainContent_login_button")).click();
-        WebOrderUtility.login(driver);
+//        WebOrderUtility.login(driver);
         WebOrderUtility.login(driver, "Tester", "test");
+        System.out.println("WebOrderUtility.isAtOrderPage(driver) = " + WebOrderUtility.isAtOrderPage(driver));
+
+        BrowserUtil.waitFor(4);
+
+        WebOrderUtility.login(driver, "blah", "blah");
 
         BrowserUtil.waitFor(4);
 
