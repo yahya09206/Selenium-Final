@@ -9,10 +9,12 @@ public class Singleton {
 
     public static Singleton getObj(){
 
-        if (obj != null){
+        if (obj == null){
+            System.out.println("OBJECT HAS NOT BEEN CREATED IT");
             obj = new Singleton();
             return obj;
         } else {
+            System.out.println("YOU ALREADY HAVE OBJECT, JUST USE THAT ONE");
             return obj;
         }
 
