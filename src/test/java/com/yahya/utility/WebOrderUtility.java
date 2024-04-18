@@ -10,9 +10,9 @@ public class WebOrderUtility {
 
 
         // enter username
-        driver.findElement(By.id("ctl00_MainContent_username"));
+        driver.findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester");
         // enter password
-        driver.findElement(By.id("ctl00_MainContent_password"));
+        driver.findElement(By.id("ctl00_MainContent_password")).sendKeys("test");
         // click login
         driver.findElement(By.id("ctl00_MainContent_login_button")).click();
     }
