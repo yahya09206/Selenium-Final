@@ -28,11 +28,15 @@ public class WebOrderTest extends TestBase {
 
         BrowserUtil.waitFor(4);
 
+        WebOrderUtility.logout(driver);
+
+        BrowserUtil.waitFor(4);
+
         WebOrderUtility.login(driver, "blah", "blah");
 
         BrowserUtil.waitFor(4);
 
-        WebOrderUtility.logout(driver);
+        System.out.println("WebOrderUtility.isAtOrderPage(driver) = " + WebOrderUtility.isAtOrderPage(driver));
 
 
     }
