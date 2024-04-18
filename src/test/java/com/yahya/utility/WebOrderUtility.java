@@ -36,4 +36,11 @@ public class WebOrderUtility {
 
         driverParam.findElement(By.id("ctl00_logout")).click();
     }
+
+    public static boolean isAtOrderPage(WebDriver driverParam){
+
+        boolean result = false;
+
+        WebElement header = driverParam.findElement(By.xpath("//h2[normalize-space()='List of All Orders']"));
+    }
 }
