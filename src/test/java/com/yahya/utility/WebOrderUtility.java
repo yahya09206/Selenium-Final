@@ -6,14 +6,29 @@ import org.openqa.selenium.WebElement;
 
 public class WebOrderUtility {
 
-    public static void login(WebDriver driver){
+    public static void login(WebDriver driverParam){
 
 
         // enter username
-        driver.findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester");
+        driverParam.findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester");
         // enter password
-        driver.findElement(By.id("ctl00_MainContent_password")).sendKeys("test");
+        driverParam.findElement(By.id("ctl00_MainContent_password")).sendKeys("test");
         // click login
-        driver.findElement(By.id("ctl00_MainContent_login_button")).click();
+        driverParam.findElement(By.id("ctl00_MainContent_login_button")).click();
+
+        BrowserUtil.waitFor(4);
+    }
+
+    public static void login(WebDriver driverParam, String username, String password){
+
+
+        // enter username
+        driverParam.findElement(By.id("ctl00_MainContent_username")).sendKeys(username);
+        // enter password
+        driverParam.findElement(By.id("ctl00_MainContent_password")).sendKeys(password);
+        // click login
+        driverParam.findElement(By.id("ctl00_MainContent_login_button")).click();
+
+        BrowserUtil.waitFor(4);
     }
 }
