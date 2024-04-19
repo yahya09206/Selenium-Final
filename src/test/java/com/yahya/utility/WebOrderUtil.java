@@ -7,7 +7,8 @@ public class WebOrderUtil {
     // Method to openWebOrderApp
     public static void openWebOrderApp(){
 
-        Driver.getDriver().get("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login.aspx");
+        // Driver.getDriver().get("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login.aspx");
+        Driver.getDriver().get(ConfigReader.read("weborder_url"));
 
     }
 
