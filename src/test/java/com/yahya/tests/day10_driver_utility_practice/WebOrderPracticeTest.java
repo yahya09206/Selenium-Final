@@ -54,6 +54,7 @@ public class WebOrderPracticeTest extends TestBase {
     @Test
     public void testClearInputBox(){
 
+        WebOrderUtil.openWebOrderApp();
 
     }
 

@@ -36,7 +36,7 @@ public class Driver {
             // quit the browser
             // make it null because once you quit, it cannot be used
         if (obj != null){
-            obj.quit();
+            Driver.getDriver().quit();
             obj = null;
         }
     }
