@@ -14,11 +14,12 @@ public class Driver {
     public static WebDriver getDriver(){
 
         if (obj == null){
-            obj = new ChromeDriver();
             WebDriverManager.chromedriver().setup();
+            obj = new ChromeDriver();
             System.out.println("First and only object created");
             return obj;
         } else {
+            System.out.println("You have it, just use existing one");
             return obj;
         }
     }

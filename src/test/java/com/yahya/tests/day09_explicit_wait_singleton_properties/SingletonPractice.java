@@ -8,6 +8,8 @@ public class SingletonPractice {
     @Test
     public void testOutDriverUtilityClass(){
 
-        Driver.
+        Driver.getDriver();
+        Driver.getDriver();
+        Driver.getDriver();
     }
 }
