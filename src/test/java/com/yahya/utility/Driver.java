@@ -4,6 +4,7 @@ import com.yahya.tests.day09_explicit_wait_singleton_properties.Singleton;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Driver {
 
@@ -17,15 +18,31 @@ public class Driver {
      */
     public static WebDriver getDriver(){
 
+        String browserName = ConfigReader.read("browser");
+
         if (obj == null){
-            WebDriverManager.chromedriver().setup();
-            obj = new ChromeDriver();
-            // System.out.println("First and only object created");
-            return obj;
-        } else {
-            // System.out.println("You have it, just use existing one");
-            return obj;
+            // according to browser type, set up driver
+            switch (browserName.toLowerCase()){
+                case "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    obj = new ChromeDriver();
+                    break;
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    obj = new FirefoxDriver();
+                    break;
+                    // other browsers omitted
+                default:
+                    obj = null;
+                    System.out.println("UNKNOWN BROWSER TYPE!!! = " + browserName);
+
+            }
+//            WebDriverManager.chromedriver().setup();
+//            obj = new ChromeDriver();
+//            // System.out.println("First and only object created");
+//            return obj;
         }
+        return obj;
     }
 
     public static void closeBrowser(){
