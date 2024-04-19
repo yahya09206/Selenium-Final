@@ -47,7 +47,7 @@ public class BrowserUtil {
         } catch (TimeoutException e){
             System.out.println("We did not see the error message element");
         }
-        return false;
+        return result;
     }
 
 }

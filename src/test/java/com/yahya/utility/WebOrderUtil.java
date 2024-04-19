@@ -44,7 +44,7 @@ public class WebOrderUtil {
     public static boolean loginErrorMsgVisible(){
 
         boolean elementFound =
-                BrowserUtil.checkVisibilityOfElement(By.xpath("//span[.='Invalid Login or Password.']"), 2);
+                BrowserUtil.checkVisibilityOfElement(By.xpath("//span[. ='Invalid Login or Password.']"), 2);
         return elementFound;
     }
 }
