@@ -53,4 +53,16 @@ public class WebOrderPracticeTest {
 
     }
 
+    @Test
+    public void testClearInputBox(){
+
+        WebOrderUtil.openWebOrderApp();
+        WebElement userNameField = Driver.getDriver().findElement(By.id("ctl00_MainContent_username"));
+        userNameField.sendKeys("sdfaadfafd");
+        BrowserUtil.waitFor(2);
+        userNameField.clear();
+        BrowserUtil.waitFor(2);
+
+    }
+
 }
