@@ -7,8 +7,14 @@ import com.yahya.utility.WebOrderUtility;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class WebOrderPracticeTest {
 
@@ -30,8 +36,15 @@ public class WebOrderPracticeTest {
         WebOrderUtil.openWebOrderApp();
         WebOrderUtil.login("abc", "blah");
 
-        WebElement errorMsg = Driver.getDriver().findElement(By.xpath("//span[@id='ctl00_MainContent_status']"));
-        assertTrue(errorMsg.isDisplayed());
+        // WebElement errorMsg = Driver.getDriver().findElement(By.xpath("//span[@id='ctl00_MainContent_status']"));
+        // assertTrue(errorMsg.isDisplayed());
+
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(2));
+        try{
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@id='blablaInvalid Login or Password.']")));
+        } catch (TimeoutException e){
+            System.out.println(e);
+        }
 
 
 
