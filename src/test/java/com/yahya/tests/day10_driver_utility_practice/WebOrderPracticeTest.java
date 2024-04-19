@@ -46,9 +46,11 @@ public class WebOrderPracticeTest {
 //            System.out.println(e.getMessage());
 //            System.out.println("We did not see the error message element");
 //        }
-        BrowserUtil.checkVisibilityOfElement(By.xpath("//span[@id='blablaInvalid Login or Password.']"), 2);
-
-
+        boolean elementFound =
+        BrowserUtil.checkVisibilityOfElement(By.xpath("//span[.='Invalid Login or Password.']"), 2);
+        // Wrap above code into method inside of WebOrderUtil
+        // loginErrorMsgVisible
+        assertTrue(elementFound);
 
     }
 

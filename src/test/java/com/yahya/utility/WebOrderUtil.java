@@ -36,4 +36,15 @@ public class WebOrderUtil {
 
         BrowserUtil.waitFor(4);
     }
+
+    /**
+     * Check if login error message is visible or not, by calling the browserUtil method we created
+     * @return true if error message is displayed, false if not
+     */
+    public static boolean loginErrorMsgVisible(){
+
+        boolean elementFound =
+                BrowserUtil.checkVisibilityOfElement(By.xpath("//span[.='Invalid Login or Password.']"), 2);
+        return elementFound;
+    }
 }
