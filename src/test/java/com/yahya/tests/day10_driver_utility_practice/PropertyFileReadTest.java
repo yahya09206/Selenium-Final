@@ -28,4 +28,10 @@ public class PropertyFileReadTest {
         String webOrderUrl = properties.getProperty("weborder_url");
         System.out.println(webOrderUrl);
     }
+
+    @Test
+    public void testReadingUsingUtilityClass(){
+
+
+    }
 }
