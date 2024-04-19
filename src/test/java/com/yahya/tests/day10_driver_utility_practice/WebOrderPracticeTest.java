@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class WebOrderPracticeTest {
 
@@ -21,6 +22,19 @@ public class WebOrderPracticeTest {
         assertEquals(expectedTitle, pageTitle);
         WebOrderUtil.login("Tester", "test");
         BrowserUtil.waitFor(3);
+    }
+
+    @Test
+    public void testInvalidCredentials(){
+
+        WebOrderUtil.openWebOrderApp();
+        WebOrderUtil.login("abc", "blah");
+
+        WebElement errorMsg = Driver.getDriver().findElement(By.xpath("//span[@id='ctl00_MainContent_status']"));
+        assertTrue(errorMsg.isDisplayed());
+
+
+
     }
 
 }
