@@ -14,7 +14,10 @@ public class WebOrderPracticeTest {
     public void testDriverPractice(){
 
         WebOrderUtil.openWebOrderApp();
-        WebOrderUtil.login();
+        // assert the page title is WebOrder Login to ensure you are at the right page
+        String pageTitle = Driver.getDriver().getTitle();
+        WebOrderUtil.login("Tester", "test");
+        BrowserUtil.waitFor(3);
     }
 
 }
