@@ -16,10 +16,10 @@ public class Driver {
         if (obj == null){
             WebDriverManager.chromedriver().setup();
             obj = new ChromeDriver();
-            System.out.println("First and only object created");
+            // System.out.println("First and only object created");
             return obj;
         } else {
-            System.out.println("You have it, just use existing one");
+            // System.out.println("You have it, just use existing one");
             return obj;
         }
     }
