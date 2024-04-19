@@ -39,13 +39,14 @@ public class WebOrderPracticeTest {
         // WebElement errorMsg = Driver.getDriver().findElement(By.xpath("//span[@id='ctl00_MainContent_status']"));
         // assertTrue(errorMsg.isDisplayed());
 
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(2));
-        try{
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@id='blablaInvalid Login or Password.']")));
-        } catch (TimeoutException e){
-            System.out.println(e.getMessage());
-            System.out.println("We did not see the error message element");
-        }
+//        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(2));
+//        try{
+//            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@id='blablaInvalid Login or Password.']")));
+//        } catch (TimeoutException e){
+//            System.out.println(e.getMessage());
+//            System.out.println("We did not see the error message element");
+//        }
+        BrowserUtil.checkVisibilityOfElement(By.xpath("//span[@id='blablaInvalid Login or Password.']"), 2);
 
 
 

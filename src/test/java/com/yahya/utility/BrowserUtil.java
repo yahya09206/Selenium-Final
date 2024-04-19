@@ -35,16 +35,19 @@ public class BrowserUtil {
      *         This message will check for the visibility of an element within the time given
      * @return true if element is found within the time and visible, false if it is not
      */
-    public static boolean checkVisibilityOfElement(By locator, Duration seconds){
+    public static boolean checkVisibilityOfElement(By locator, int seconds){
 
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), seconds);
+        boolean result = false;
+
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(seconds));
 
         try{
             wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-            return true;
+            result = true;
         } catch (TimeoutException e){
             System.out.println("We did not see the error message element");
-            return false;
         }
+        return false;
     }
+
 }
