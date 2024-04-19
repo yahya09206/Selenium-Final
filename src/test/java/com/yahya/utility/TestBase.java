@@ -30,6 +30,7 @@ public abstract class TestBase {
 
     @AfterEach
     public void closeBrowser(){
-        driver.quit();
+        // quit the browser + make it null, so we can get a new one upon opening browser
+        Driver.closeBrowser();
     }
 }

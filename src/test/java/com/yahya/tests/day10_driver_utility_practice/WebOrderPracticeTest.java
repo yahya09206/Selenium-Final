@@ -1,9 +1,7 @@
 package com.yahya.tests.day10_driver_utility_practice;
 
-import com.yahya.utility.BrowserUtil;
-import com.yahya.utility.Driver;
-import com.yahya.utility.WebOrderUtil;
-import com.yahya.utility.WebOrderUtility;
+import com.yahya.utility.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -16,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-public class WebOrderPracticeTest {
+public class WebOrderPracticeTest extends TestBase {
 
     @Test
     public void testDriverPractice(){
@@ -56,12 +54,6 @@ public class WebOrderPracticeTest {
     @Test
     public void testClearInputBox(){
 
-        WebOrderUtil.openWebOrderApp();
-        WebElement userNameField = Driver.getDriver().findElement(By.id("ctl00_MainContent_username"));
-        userNameField.sendKeys("sdfaadfafd");
-        BrowserUtil.waitFor(2);
-        userNameField.clear();
-        BrowserUtil.waitFor(2);
 
     }
 
