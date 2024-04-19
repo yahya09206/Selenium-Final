@@ -43,7 +43,8 @@ public class WebOrderPracticeTest {
         try{
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@id='blablaInvalid Login or Password.']")));
         } catch (TimeoutException e){
-            System.out.println(e);
+            System.out.println(e.getMessage());
+            System.out.println("We did not see the error message element");
         }
 
 
