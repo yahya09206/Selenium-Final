@@ -1,6 +1,7 @@
 package com.yahya.tests.day11_property_driver_faker_pom;
 
 import com.yahya.pages.WAllOrderPage;
+import com.yahya.pages.WCommonArea;
 import com.yahya.pages.WLoginPage;
 import com.yahya.utility.BrowserUtil;
 import com.yahya.utility.TestBase;
@@ -39,5 +40,23 @@ public class WebOrderPOM_Test extends TestBase {
         allOrderPage.unCheckAllButton.click();
 
 
+    }
+
+    @Test
+    public void testCommonArea(){
+
+        WLoginPage loginPage = new WLoginPage();
+        loginPage.goTo();
+        loginPage.login("Tester", "test");
+
+        WCommonArea commonArea = new WCommonArea();
+        commonArea.viewOrders.click();
+        BrowserUtil.waitFor(2);
+
+        commonArea.viewAllProducts.click();
+        BrowserUtil.waitFor(2);
+
+        commonArea.viewAllOrders.click();
+        BrowserUtil.waitFor(2);
     }
 }
