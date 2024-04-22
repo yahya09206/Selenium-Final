@@ -16,7 +16,7 @@ public class WLoginPage {
     public WebElement passwordField;
     @FindBy(id = "ctl00_MainContent_login_button")
     public WebElement loginButton;
-    @FindBy(xpath = "//span[.='Invalid Login or Password']")
+    @FindBy(xpath = "//span[.='Invalid Login or Password.']")
     public WebElement errorMsg;
 
     public WLoginPage(){
