@@ -16,6 +16,8 @@ public class WLoginPage {
     public WebElement passwordField;
     @FindBy(id = "ctl00_MainContent_login_button")
     public WebElement loginButton;
+    @FindBy(xpath = "//span[.='Invalid Login or Password']")
+    public WebElement errorMsg;
 
     public WLoginPage(){
         PageFactory.initElements(Driver.getDriver(), this);
@@ -31,6 +33,16 @@ public class WLoginPage {
         this.usernameField.sendKeys(username);
         this.passwordField.sendKeys(password);
         this.loginButton.click();
+
+    }
+
+    /**
+     * Check if error message is present if wrong credentials are provided
+     * loginErrorMsgPresent simply return the result of the isDisplayed method call
+     */
+    public boolean loginErrorMsgPresent(){
+
+        return this.errorMsg.isDisplayed();
 
     }
 }
