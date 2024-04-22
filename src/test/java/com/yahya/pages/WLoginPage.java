@@ -9,11 +9,11 @@ import org.openqa.selenium.support.PageFactory;
 public class WLoginPage {
 
     @FindBy(id = "ctl00_MainContent_username")
-    WebElement usernameField;
+    public WebElement usernameField;
     @FindBy(id = "ctl00_MainContent_password")
-    WebElement passwordField;
+    public WebElement passwordField;
     @FindBy(id = "ctl00_MainContent_login_button")
-    WebElement loginButton;
+    public WebElement loginButton;
 
     public WLoginPage(){
         PageFactory.initElements(Driver.getDriver(), this);
