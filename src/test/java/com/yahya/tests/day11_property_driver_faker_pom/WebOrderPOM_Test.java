@@ -10,9 +10,10 @@ public class WebOrderPOM_Test extends TestBase {
     @Test
     public void testWithPOM_for_login(){
 
-        WebOrderUtil.openWebOrderApp();
+
         WLoginPage loginPage = new WLoginPage();
 
+        loginPage.goTo();
         loginPage.usernameField.sendKeys("Tester");
         loginPage.passwordField.sendKeys("test");
         loginPage.loginButton.click();
